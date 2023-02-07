@@ -7,8 +7,9 @@ import { useState } from "react";
 function App() {
   const [data,setdata]=useState()
   const [location,setlocation]=useState("")
-  const URL=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=f36585fed1b738460dea00935d21e163`
-
+  //const URL=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=f36585fed1b738460dea00935d21e163`
+//process.env.REACT_APP_MY_ONLY_KEY
+const URL=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_MY_ONLY_KEY}`
 
  const searchingdata=(event)=>{
 
@@ -48,7 +49,7 @@ function App() {
 
 <p>{data?.wind.speed}</p></div>
 <div className="feel"><p>Country</p>
-  <h2>{data?.sys.country}</h2></div>
+  <p>{data?.sys.country}</p></div>
 
 </div>
 
